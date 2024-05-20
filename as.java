@@ -7,9 +7,9 @@ import java.nio.charset.StandardCharsets;
 
 public class as {
     public static void main(String[] args) throws Exception {
-        String apiUrl = "https://iot-api.heclouds.com/thingmodel/query-device-property";
+        String apiUrl = "https://iot-api.heclouds.com/thingmodel/query-device-property";//
         String queryParameters = "?product_id=4aS7AhlV8X&device_name=circlecheck";
-        String authorizationValue = "version=2022-05-01&res=userid%2F390250&et=1716217013&method=sha1&sign=RcydZVJ7puCgZHbkTpRVNpCsHIk%3D";
+        String authorizationValue = "version=2022-05-01&res=userid%2F390250&et=2016217735&method=sha1&sign=pq%2Bbjtzv8VTEJcqS2v5uIME7uMk%3D";//密钥
 
         // 组合url
         URL url = new URL(apiUrl + queryParameters);
@@ -28,7 +28,7 @@ public class as {
             StringBuilder content = new StringBuilder();
 
             while ((inputLine = in.readLine()) != null) {
-                content.append(inputLine);
+                content.append(inputLine); //内容都在content
             }
 
             in.close();
