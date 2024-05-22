@@ -5,8 +5,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+import static java.lang.Thread.sleep;
+
 public class as {
-    public static void main(String[] args) throws Exception {
+    public static void GetData() throws Exception {
         String apiUrl = "https://iot-api.heclouds.com/thingmodel/query-device-property";//
         String queryParameters = "?product_id=4aS7AhlV8X&device_name=circlecheck";
         String authorizationValue = "version=2022-05-01&res=userid%2F390250&et=2016217735&method=sha1&sign=pq%2Bbjtzv8VTEJcqS2v5uIME7uMk%3D";//密钥
@@ -39,5 +41,9 @@ public class as {
         }
 
         connection.disconnect();
+    }
+
+    public static void main(String[] args) throws Exception {
+        GetData();
     }
 }
