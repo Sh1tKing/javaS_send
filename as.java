@@ -9,18 +9,14 @@ import static java.lang.Thread.sleep;
 
 public class as {
     public static void GetData() throws Exception {
-        String apiUrl = "https://iot-api.heclouds.com/thingmodel/query-device-property";//
-        String queryParameters = "?product_id=4aS7AhlV8X&device_name=circlecheck";
+        String apiUrl = "https://iot-api.heclouds.com/thingmodel/query-device-property?product_id=4aS7AhlV8X&device_name=circlecheck";
         String authorizationValue = "version=2022-05-01&res=userid%2F390250&et=2016217735&method=sha1&sign=pq%2Bbjtzv8VTEJcqS2v5uIME7uMk%3D";//密钥
 
-        // 组合url
-        URL url = new URL(apiUrl + queryParameters);
-
-        // 创建HTTP连接
+        URL url = new URL(apiUrl);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
 
-        // 添加Authorization头
+        //Authorization头
         connection.setRequestProperty("Authorization", authorizationValue);
         connection.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
 
